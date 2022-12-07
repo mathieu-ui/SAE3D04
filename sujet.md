@@ -13,20 +13,20 @@ Argumenter :
 - Tache, Jira
 - Preuve
 - comparaison des couts
-- Securiti
+- Securité
 
 ## Le Groupe
 
 - Julien Alleaume
 - Ilker Onay
 - Mathieu Puig
-- Ndeye Codou
+- Ndeye Codou Touré
 
 ## Premiere Instalation
 
 ### 2 proxmox
 
-- On fait en premier install de deux proxmox qui seron par la suite completer par un troisieme serveur pour faire un systeme CEHP
+- On fait en premier l'installation de deux proxmox qui seront par la suite completer par un troisieme serveur pour faire un systeme CEPH
 
 ### 2 hyperV
 
