@@ -29,3 +29,17 @@ Lors de l'installation des serveurs Windows, nous avons pris des notes sur notre
 ------------
 
 ## PROXMOX
+
+Nous avons aussi realiser des compte rendu sur les instalation et le configuration, comprenant les configuration de CEPH.
+
+### [ICI](./proxmox/) le compte rendu
+
+### [ICI](./proxmox) le compte rendu
+
+------------
+
+## Comparatif et conclusion
+
+. . .
+
+### [ICI](./proxmox/) le compte rendu
