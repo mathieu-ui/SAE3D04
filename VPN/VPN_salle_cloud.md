@@ -6,7 +6,7 @@ Pour regler ce probleme nous allont metre le serveur sur un VPS et le serveur Pr
 
 Voici un resumer visuelle :
 
-![img](./vpn.svg)
+![img](./img/vpn.svg)
 
 ## Configuration du serveur VPS par commande
 
@@ -108,22 +108,22 @@ sudo systemctl enable --now wg-quick@wg0
 
 Pour l'activer ponctuellement :
 
-![img](./Capture%20d’écran%20du%202022-12-11%2022-07-30.png)
+![img](./img/Capture%20d’écran%20du%202022-12-11%2022-07-30.png)
 
 ## Setup IP et ping
 
 Ici mon interface resau wlp1s0 est connecter a un partage de connection en 4G. Avec l'interface wg0 d'activer et de connerter je peux bien ping le resaux de l'IUT.
 
-![img](./Capture%20d’écran%20du%202022-12-09%2018-29-05.png)
+![img](./img/Capture%20d’écran%20du%202022-12-09%2018-29-05.png)
 
 ## TraceRoute
 
 Depuis cette foi-ci le resau fibre de mon appartement je realise un trace route, je passe bien par mon VPS puis le serveur de l'IUT pour ensuite arriver sur la salle.
 
-![img](./Capture%20d’écran%20du%202022-12-11%2022-07-20.png)
+![img](./img/Capture%20d’écran%20du%202022-12-11%2022-07-20.png)
 
 ## Desactivation
 
 Pour desactiver l'interface :
 
-![img](./Capture%20d’écran%20du%202022-12-11%2022-07-41.png)
+![img](./img/Capture%20d’écran%20du%202022-12-11%2022-07-41.png)
