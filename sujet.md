@@ -24,7 +24,7 @@ Argumenter :
 
 ## Premiere Instalation
 
-### 2 proxmox
+### 3 proxmox
 
 - On fait en premier l'installation de deux proxmox qui seront par la suite completer par un troisieme serveur pour faire un systeme CEPH
 
