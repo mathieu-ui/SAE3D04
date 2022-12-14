@@ -21,7 +21,10 @@ Pour resumer :
 
 Nous avont tout d'abort noter dans un repositorie git le sujet qui et accesible a tout le monde afin que tout les menbres du groupe comprenent bien nos objectifs.
 
+![Sujet](./img/Capture%20d’écran%20du%202022-12-14%2012-08-19.png)
 
+
+Apers cela pour simplifier la gestion des taches et avoir une organisation claire du traville a executer nous avont pris l'initiative de realiser un projet "SAE Cloud" sur Jira Work Management afin de visualiser les taches de chacun et de suivre l'avancement du projet 
 
 ## Taches realiser au cours du projet
 
