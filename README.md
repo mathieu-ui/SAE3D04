@@ -3,6 +3,7 @@
 SAE Cloud sur les systeme de virtualisation
 
 ------------
+
 ## Hyper-V
 
 Lors de l'installation des serveurs Windows, nous avons pris des notes sur notre progression pour générer une documentation utile et explicative de nos actions. Cela était d'autant plus important que nous avons découvert l'environnement serveur et la virtualisation de Windows au cours de cette SAE.
@@ -41,4 +42,4 @@ Pour gérer cette SAE, nous avons mis en place un système de gestion des tâche
 
 . . .
 
-### [ICI](./proxmox/) le compte rendu
+### [ICI](./Comparatif/readme.md) le compte rendu
