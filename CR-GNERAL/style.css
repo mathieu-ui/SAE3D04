@@ -1,5 +1,6 @@
 /*
   This is an advanced CSS file that you can use to style your Markdown content.
+  The styles use the flat design style and include larger headings.
   You can customize the styles to suit your preferences.
 */
 
@@ -8,6 +9,7 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    color: #333333;
   }
   
   /* Set the default color for hyperlinks */
@@ -28,16 +30,24 @@ body {
     margin-bottom: 10px;
   }
   h1 {
-    font-size: 24px;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   h2 {
-    font-size: 22px;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   h3 {
-    font-size: 20px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   h4 {
     font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
   h5 {
     font-size: 16px;
@@ -86,18 +96,5 @@ body {
   }
   th, td {
     padding: 5px 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  th {
-    font-weight: bold;
-    background-color: #f5f5f5;
-  }
-  
-  /* Set custom styles for horizontal rules */
-  hr {
-    border: 0;
-    height: 1px;
-    background-color: #cccccc;
-    margin: 20
+   
   }  
