@@ -1,0 +1,9 @@
+{
+    "markdown-pdf.headerTemplate": 
+    "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span>Compte rendu SAE3D04</span></div><div style=\"font-size: 9px; margin-right: 1cm;margin-left: auto;\"> <span>R T 2</span></div> ",
+    "markdown-pdf.footerTemplate": "<div style=\"font-size: 9px; margin-left: 1cm;\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div> <div style=\"font-size: 9px; margin-left: auto; margin-right: 1cm; \"> <span class='date'></span></div>",
+    "markdown-pdf.margin.top": "2cm",
+    "markdown-pdf.margin.bottom": "1.5cm",
+    "markdown-pdf.margin.right": "1.5cm",
+    "markdown-pdf.margin.left": "1.5cm",
+}
