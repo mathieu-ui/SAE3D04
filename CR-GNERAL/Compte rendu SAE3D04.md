@@ -77,6 +77,8 @@ Lors de ce projet, nous avons réalisé plusieurs tâches réparties sur deux se
 
 ![time-line](./img/Capture%20d’écran%20du%202022-12-14%2014-33-49.png)
 
+> Jaune -> Julien ; Violet -> MAthieu ; Bleau -> Ilker ; Proxmox -> Ndeye
+
 Pour résumer, nous avons pu réaliser toutes les installations que nous voulions faire sur Proxmox. Nous avons également pu installer un VPN qui nous a permis d'administrer nos serveurs à distance. Du côté de Windows, nous avons pu découvrir l'environnement Windows Server et Hyper-V, et nous somme allez jusqu'a la migration a chaud.
 
 #### Conclusion et ameloiration possible
@@ -85,7 +87,7 @@ On peut donc dire que malgré l'ampleur de notre projet, grâce au travail fourn
 
 Ce projet nous a montré que la coordination du travail est très importante, car nous avons pu voir qu'un manque de coordination pouvait mener à des désaccords au sein d'un groupe de travail. En vue d'améliorer notre travail en groupe à l'avenir, nous pourrions mettre en place des méthodes de gestion de projet plus efficaces pour éviter ces désaccords et atteindre nos objectifs de manière plus efficace.
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br></br>
 
 ## Proxmox
 
