@@ -2,15 +2,17 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
-</br></br>
+</br>
 
 ## Mettre en place une infrastructure virtualisée
 
-</br></br>
+</br>
 
 > Ce projet vise à comparer différents systèmes de virtualisation pour remplacer l'environnement VMWare actuellement en place. L'expertise a été réalisée dans un contexte professionnel et a impliqué l'installation et la configuration de serveurs Windows et Proxmox. Les progrès de l'installation ont été documentés pour créer une documentation utile et explicative de nos actions. Le compte rendu général reprend les comptes rendus de chaque partie.
 
-</br></br>
+</br>
+
+> Afin de réaliser cette étude, nous avons utilisé deux solutions de virtualisation : Hyper-V de Windows, qui est non open-source, et Proxmox, qui est basé sur Linux et est open-source. Windows demande des compétences et une mise en œuvre bien plus complexes que son concurrent. Proxmox est plus simple à utiliser grâce à une communauté forte et un nombre d'utilisateurs supérieur à celui de Windows. Dans ce cas, notre choix se tournerait vers Proxmox, qui serait plus adapté à nos compétences et au temps que nous devons consacrer à l'installation du système.
 
 ## Table des matières
 
@@ -22,7 +24,7 @@
 4. VPN
 5. Comparatif et conclusion
 
-</br></br></br>
+</br>
 
 Avec la participation de Julien Alleaume, Ilker Onay, Mathieu Puig et Ndeye Codou Touré
 
@@ -67,6 +69,8 @@ Parmi les informations utiles incluses dans ces crédits, nous avons :
 
 ![vpn](./img/vpn.png)
 
+</br></br></br>
+
 #### Taches realiser au cours du projet
 
 Lors de ce projet, nous avons réalisé plusieurs tâches réparties sur deux semaines. Elles sont résumées dans le schéma suivant :
@@ -81,7 +85,7 @@ On peut donc dire que malgré l'ampleur de notre projet, grâce au travail fourn
 
 Ce projet nous a montré que la coordination du travail est très importante, car nous avons pu voir qu'un manque de coordination pouvait mener à des désaccords au sein d'un groupe de travail. En vue d'améliorer notre travail en groupe à l'avenir, nous pourrions mettre en place des méthodes de gestion de projet plus efficaces pour éviter ces désaccords et atteindre nos objectifs de manière plus efficace.
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br></br></br></br></br></br>
 
 ## Proxmox
 
