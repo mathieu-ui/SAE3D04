@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compte rendu SAE3D04.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/markdown-pdf.styles" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="compte-rendu-sae3d04">Compte rendu SAE3D04</h1>
+<link rel="stylesheet" type="text/css" href="style.css">
+<p></br></br></p>
+<h2 id="mettre-en-place-une-infrastructure-virtualis%C3%A9e">Mettre en place une infrastructure virtualisée</h2>
+<p></br></br></p>
+<blockquote>
+<p>Ce projet vise à comparer différents systèmes de virtualisation pour remplacer l'environnement VMWare actuellement en place. L'expertise a été réalisée dans un contexte professionnel et a impliqué l'installation et la configuration de serveurs Windows et Proxmox. Les progrès de l'installation ont été documentés pour créer une documentation utile et explicative de nos actions. Le compte rendu général reprend les comptes rendus de chaque partie.</p>
+</blockquote>
+<p></br></br></p>
+<h2 id="table-des-mati%C3%A8res">Table des matières</h2>
+<br>
+<ol>
+<li>Gestion de projet</li>
+<li>Proxmox</li>
+<li>Hyper-V et Windows Server</li>
+<li>VPN</li>
+<li>Comparatif et conclusion</li>
+</ol>
+<p></br></br></br></p>
+<p>Avec la participation de Julien Alleaume, Ilker Onay, Mathieu Puig et Ndeye Codou Touré</p>
+<h2 id="gestion-de-projet">Gestion de projet</h2>
+<h3 id="le-projet">Le projet</h3>
+<p>Le projet est basé sur une situation professionnelle, qui consiste en une expertise ayant pour but de comparer différents systèmes de virtualisation afin de remplacer l'environnement VMWare.</p>
+<h4 id="nos-objectifs">Nos objectifs</h4>
+<p>Pour réaliser ce projet, notre objectif est de comparer VMware, Hyper-V (la solution de virtualisation de Windows) et Proxmox (une solution de virtualisation open source gratuite).</p>
+<p>Pour ce faire, nous avons décidé d'installer ces deux solutions directement sur des serveurs physiques. Nous nous fixons donc comme objectif d'installer deux serveurs Hyper-V et trois serveurs Proxmox afin de faire fonctionner CEPH.</p>
+<p>Pour résumer :</p>
+<ul>
+<li>2 serveurs Windows qui communiquent entre eux pour réaliser des migrations à chaud</li>
+<li>3 serveurs Proxmox avec un système de partage de fichiers CEPH pour effectuer les migrations à chaud.</li>
+</ul>
+<h4 id="notre-organisation">Notre organisation</h4>
+<p>Nous avons d'abord noté dans un référentiel git le sujet qui est accessible à tous afin que tous les membres du groupe comprennent bien nos objectifs.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-14 12-08-19.png" alt="Sujet"></p>
+<p>Après cela, pour simplifier la gestion des tâches et avoir une organisation claire du travail à exécuter, nous avons pris l'initiative de réaliser un projet &quot;SAE Cloud&quot; sur Jira Work Management afin de visualiser les tâches de chacun et de suivre l'avancement du projet.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-14 14-21-27.png" alt="jira"></p>
+<p>En plus pour une meilleure gestion des serveurs, nous avons mis en place des crédits en ligne accessibles par tous et modifiables selon nos configurations.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/idrac.png" alt="idrac"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/sysvirt.png" alt="servP"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/sysvirtwin.png" alt="servW"></p>
+<p>Parmi les informations utiles incluses dans ces crédits, nous avons :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/info.png" alt="infoUtile"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vpn.png" alt="vpn"></p>
+<h4 id="taches-realiser-au-cours-du-projet">Taches realiser au cours du projet</h4>
+<p>Lors de ce projet, nous avons réalisé plusieurs tâches réparties sur deux semaines. Elles sont résumées dans le schéma suivant :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-14 14-33-49.png" alt="time-line"></p>
+<p>Pour résumer, nous avons pu réaliser toutes les installations que nous voulions faire sur Proxmox. Nous avons également pu installer un VPN qui nous a permis d'administrer nos serveurs à distance. Du côté de Windows, nous avons pu découvrir l'environnement Windows Server et Hyper-V, et nous somme allez jusqu'a la migration a chaud.</p>
+<h4 id="conclusion-et-ameloiration-possible">Conclusion et ameloiration possible</h4>
+<p>On peut donc dire que malgré l'ampleur de notre projet, grâce au travail fourni par les membres du groupe, nous avons atteint nos objectifs principaux.</p>
+<p>Ce projet nous a montré que la coordination du travail est très importante, car nous avons pu voir qu'un manque de coordination pouvait mener à des désaccords au sein d'un groupe de travail. En vue d'améliorer notre travail en groupe à l'avenir, nous pourrions mettre en place des méthodes de gestion de projet plus efficaces pour éviter ces désaccords et atteindre nos objectifs de manière plus efficace.</p>
+<p></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></p>
+<h2 id="proxmox">Proxmox</h2>
+<blockquote>
+<p>Vous pouvez retrouvez des commandes à la fin du documents</p>
+</blockquote>
+<h3 id="1installation">1.Installation</h3>
+<h4 id="a-quoi-sa-sert">A quoi sa sert ?</h4>
+<p>Ici nous allons définir les différents termes qu'on va utiliser par la suite et leur fonctionnement.</p>
+<p>CEPH : C'est une solution libre de stockage distribué qu'on peut retrouver sur proxmox.</p>
+<p>Monitor:Les moniteurs (Mons) Chaque cluster Ceph nécessite la mise en œuvre de moniteurs installés sur des serveurs indépendants. Ces moniteurs sont utilisés par les clients Ceph pour obtenir la carte la plus à jour du cluster. Les moniteurs s’appuient sur une version modifiée du protocole Paxos pour établir entre eux un consensus sur la cartographie du cluster</p>
+<p>Manager:</p>
+<p>OSD: À chaque OSD correspond un démon chargé de stocker les données, de les répliquer ou de les redistribuer en cas de défaillance d’un équipement. Chaque démon OSD fournit aussi des informations de monitoring et de santé aux moniteurs Ceph. Un cluster Ceph doit à minima disposer de deux démons OSD (3 sont recommandés) pour démarrer.</p>
+<p>Pool: Un cluster Ceph stocke les données sous forme d’objets stockés dans des partitions logiques baptisées “pools”. À chaque pool Ceph correspond un ensemble de propriétés définissant les règles de réplications ou le nombre de groupes de placement dans le pool.Par exemple, si l’on a spécifié trois copies et que le cluster dispose de trois nœuds, la triple réplication permet de survivre à deux pannes de nœuds ou à la panne de deux disques.</p>
+<p></br></br></br></br></br></br></br></p>
+<h4 id="pr%C3%A9requis">Prérequis</h4>
+<p>Pour l'installation CEPH il vous au minimum 2 partitions de disques virtuels par serveur. Nous sommes sur des serveurs qui ont déjà était utiliser donc dans notre cas il faut <code>supprimer</code> les partitions de disques virtuals et par la suite on obtient une seul partitions qu'on <code>clear</code>. Car lors de la créations des OSD Ceph il faut allouer une partitions de disques si on déjà étaient allouer a d'ancien noeud il se peut que proxmox vous bloquer à cette étape et vous devez tout recommencer, c'est pour celà qu'il vaut mieux s'en assurer dès le débuts.</p>
+<p>C'est aussi une occasion d'activer <code>NPar+ SR-IOV</code>, SR-IOV crée 8 carte réseaux virtuelle et NPar permet de gérer la bande passante sur celle-ci (exemple : Si on a juste une carte réseaux occupée toute la bande passante lui appartient mes si ont a deux cartes réseaux 'occuper' la bande passante est diviser en 2 , etc,etc,...)</p>
+<p>L'activation de NPAR+ SR-IOV :
+Chemin : <code>Device Settings -&gt; Votre carte 10G -&gt; Device Level Configuration -&gt; Virtualization Mode : NPar+ SR-IOV</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_prerequis/1.png" alt="img"></p>
+<blockquote>
+<p>On peut observer qu'ils ont bien était activées.</p>
+</blockquote>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_prerequis/3.png" alt="img"></p>
+<p>Suppression des cartes réseaux :
+Chemin : <code>Device Settings -&gt; Intgrated RAID Controller -&gt; Virtual Disk Management</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_prerequis/2.png" alt="image"></p>
+<h4 id="11-promox">1.1 Promox</h4>
+<h5 id="111-bios">1.1.1 BIOS</h5>
+<p>Dans un premier temps il faut booter son iso sur le IDRAAC, pour ceci il faut cliquer sur <code>Connecter le média virtuel</code>, ajouter l'iso Proxmox puis le Mapper</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-31-11.png" alt="img"></p>
+<blockquote>
+<p>Vous pouvez cliquer sur <code>fermer</code></p>
+</blockquote>
+<p>Choisir de le booter sur <code>Virtual CD / DVD / ISO</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-31-53.png" alt="img"></p>
+<p><code>Réinitialiser le système (démarrage à chaud)</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-32-27.png" alt="img"></p>
+<h5 id="112-proxmox">1.1.2 Proxmox</h5>
+<p>Appuyer <code>Entrer</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-39-31.png" alt="img"></p>
+<p>Cliquer sur <code>I agree</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-41-24.png" alt="img"></p>
+<p>Il faut choisir la partition de disque, puis cliquer sur <code>Next</code> ( sinon on peut cliquer sur <code>options</code> pour modifier )</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-41-57.png" alt="img"></p>
+<p>Selectioner votre Pays/Zone, puis cliquer sur <code>Next</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-42-15.png" alt="img"></p>
+<p>Mot de passe : rftgy#123 (dans notre cas), saissir une email valide</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-43-58.png" alt="img"></p>
+<blockquote>
+<p>IP address : Adresse que récupéra votre serveur Proxmox</p>
+</blockquote>
+<p>Gateway : Dans mon cas c'est la passerelle par défauts de la salle</p>
+<p>DNS : Dans mon cas celui de l'IUT</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-48-27.png" alt="img"></p>
+<p>Cliquer <code>Install</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-48-45.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 10-51-55.png" alt="img"></p>
+<p></br></br></br></p>
+<h5 id="connection-via-console">Connection via console</h5>
+<p>Exemple :</p>
+<pre class="hljs"><code><div>Login : root
+Mot de passe : rftgy<span class="hljs-comment">#123</span>
+</div></code></pre>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 11-29-04.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 11-29-49.png" alt="img"></p>
+<h6 id="connection-graphique">Connection graphique</h6>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 11-30-22.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen/Capture du 2022-12-07 11-31-41.png" alt="img"></p>
+<h4 id="12-ceph">1.2 CEPH</h4>
+<h5 id="121cluster">1.2.1.Cluster</h5>
+<p>Pour l'installation de Ceph il faut crée un cluster avec minimum 3 noeud est recommandée.</p>
+<p>Donc pour celà, sur la machine &quot;hôte&quot; il faut crée un cluster puis partager son code au autres noeuds.</p>
+<p>Pour ce faire aller dans <code>Cluster</code> puis dans <code>Create a cluster</code> est il s'affichera la page ci-dessous.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 15-49-42.png" alt="img"></p>
+<p>Une fois dedans Entrée un nom de cluster par exemple <code>CephIlker</code> car ce Cluster va me servir pour faire du CEPH</p>
+<p>Quand on clique sur le Cluster on a maintenant accès au boutton <code>Cluster Join Information</code> celui-ci va permettre a vos autres noeuds de facilement rejoindre le cluster (la meilleur façon de copier et de cliquer sur <code>Copy Information</code> pour être sur de ne pas oublier le moindre caractères à copier)</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 15-50-10.png" alt="img"></p>
+<p>Après celà, il nous reste plus qu'à aller dans la partie cluster sur les autres noeuds et cliquer sur <code>Join Cluster</code> pour rejoindre le cluster a fin de faire les liens entre eux. Dans la catégorie Information il faut copier le &quot;code&quot;, puis dans password entrer le mot de passe du serveur qui détient le cluster dans notre cas tout le mot de passe proxmox est <code>rftgy#123</code>. Il nous reste plus cas choisir le cluster network qu'il vous propose.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 15-51-16.png" alt="img"></p>
+<h5 id="122ceph">1.2.2.Ceph</h5>
+<h5 id="etape-1">Etape 1</h5>
+<p>Après avoir crée est rejoint notre cluster avec les deux autres serveurs il faut installer notre CEPH.</p>
+<p>Pour celà il faut cliquer sur CEPH dans la catégorie de notre noeud numéro un, deux et trois. Puis cliquer sur install ( Attention en aucun cas ne fermer pas la page car votre installation risque de crash et vous devez tout recommencer). Une fois avoir cliquer sur l'install il se fera automatiquement seulement dans le premier noeud vous aurez a choisir votre <code>Public Network</code> qui est l'IP de votre serveur numéro un, pour les autres l'installation ce fait automatiquement.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 16-08-54.png" alt="img"></p>
+<h5 id="etape-2">Etape 2</h5>
+<p>Sur votre noeud dans la catégorie <code>CEPH</code> puis <code>Monitor</code> ajouter les moniteur et manager deux et trois en cliquant sur <code>Create</code> dans la partie Monitor ou Manager</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 16-30-27.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-12 16-30-16.png" alt="img"></p>
+<h5 id="etape-3">Etape 3</h5>
+<p>Sur chaque noeud il va falloir crée une OSD, donc depuis la catégorie <code>CEPH</code> puis <code>OSD</code> cliquer sur crée est sélectionnées votre partition de disque libre</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-13 15-47-25.png" alt="img"></p>
+<p>Une fois fini :
+<img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-13 15-50-27.png" alt="img"></p>
+<h5 id="etape-4">Etape 4</h5>
+<p>Il faut maintenant crée une pool depuis le pve1, pour faire celà aller dans <code>CEPH</code> puis <code>Pools</code>, cliquer sur <code>Create</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-13 16-24-38.png" alt="img"></p>
+<h5 id="etape-5">Etape 5</h5>
+<p>Pour voir le bon fonctionnement de toutes votre installation il faut vérifier l'état de santé de notre CEPH.
+Pour cela il suffit de cliquer sur <code>CEPH</code> :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Screen_ceph/Capture du 2022-12-13 16-55-33.png" alt="img"></p>
+<p></br></br></br></p>
+<h3 id="2utilisation">2.Utilisation</h3>
+<h4 id="21-cr%C3%A9ation-dune-vm">2.1 Création d'une VM</h4>
+<p>La création de VM est un peu particulier sur proxmox l'installation via ISO, ça nécessitent de retirer la carte réseaux et de le r'ajouter après l'installation mais aussi de retirer le CD/DVD après l'installation pour pouvoir migrer la VM.</p>
+<p>Pour crée votre VM il faut d'abord upload votre iso, rendez-vous dans votre noeud et cliquer sur <code>Image ISO</code> et cliquer sur <code>UPLOAD</code>,puis <code>Select File</code> pour selectionner votre ficher, finir en cliquant sur <code>UPLOAD</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm1.png" alt="img"></p>
+<p>Pour crée une VM, maintenant vous devez cliquer sur <code>Create VM</code> en haut à droite :</p>
+<p>Il vous faut choisir le noeud d'appartenance, une ID est donner par défauts changer la si vous le souhaitez, donner un nom à votre VM.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm2.png" alt="img"></p>
+<p>Choissisez l'image ISO que vous souhaitez que votre VM doit prendre.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm3.png" alt="img"></p>
+<p>Je laisse par défauts</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm4.png" alt="img"></p>
+<p>Définisser si vous voulez utiliser le stockage local ou ceph depuis <code>Storage</code> et la taille de Disk dans mon cas 8Go est largement suffisants</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm5.png" alt="img"></p>
+<p>Quelque chose d'important sur proxmox est que pour chaque VM vous pouvez limiter la bande passante seulement sur la VM sans passer par une limitation au niveau du port comme VMWare</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm6.png" alt="img"></p>
+<p>On peut augmenter le nombre de coeurs allouer</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm7.png" alt="img"></p>
+<p>On peut augmenter la RAM (mémoire vice) allouer (Valeur en Mo)</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm8.png" alt="img"></p>
+<p>Ici on doit crée une vm sans carte réseaux pour l'ajouter après l'installation ISO fini, car dans l'établissement les installations de paquets et autres nous prend beaucoup de temps à cause de la connection internet. Donc pour éviter les installations de paquets ou autres il vaut mieux désactiver la création de carte réseaux (je vous montre par la suite comment la crée). Cliquer sur ``No network device`.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm9.png" alt="img"></p>
+<p>Vous pouvez relire les informations de création de votre VM pour vous assurer de votre configuration souhaitez.</p>
+<p>Si vous souhaitez le démarrage après la création cliquer sur <code>Start after created</code> (en bas à gauche)</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm10.png" alt="img"></p>
+<p>On peut observer qu'on a bien notre vm de crée mais il n'a pas de connection internet</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm11.png" alt="img"></p>
+<p>Cliquer sur votre VM,ensuite dans le menu déroulant cliquer sur <code>Hardware</code>, puis sur <code>Add</code> et selectionner <code>Network Device</code>. Selectionner votre bridge et appuyer sur <code>Add</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm12.png" alt="img"></p>
+<p>On vérifie bien en ping 8.8.8.8, on a bien à une connection internet.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_create_vm/create_vm13.png" alt="img"></p>
+<h4 id="22-migration-dune-vm">2.2 Migration d'une VM</h4>
+<p>Pour migrer une VM après l'installation via ISO il necéssitent de se rendre dans la partie <code>Hardware</code> de votre VM et de modifier le <code>CD/DVD Drive</code> est de le mettre en mode <code>Do not use any media</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate1.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate2.png" alt="img"></p>
+<p>Migration à froid :</p>
+<p>Ici nous avons notre VM nommée &quot;CentosMini&quot; dans le noeud &quot;pve1&quot;.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate3.png" alt="img"></p>
+<p>On clique droit dessus puis sur <code>Migrate</code> et on choissie vers quel noeud on voeud le migrer (mauvais screen j'ai migrer vers le noeud 3 on pourra le voir dans le screen suivants)</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate4.png" alt="img"></p>
+<p>On peut observer le message (to node 'pve3', donc vers le noeud 3), la migration à réussis</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate5.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate6.png" alt="img"></p>
+<p>Migration à chaud :</p>
+<p>Maintenant, on va démarrer la VM pour faire une migration à chaud</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate7.png" alt="img"></p>
+<p>On migre au noeud de départ donc la une (pve1)</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate8.png" alt="img"></p>
+<p>On peut voir que la migration à encore réussis</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate9.png" alt="img"></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_migrate/migrate10.png" alt="img"></p>
+<br>
+<h4 id="23-cr%C3%A9ation-dune-template">2.3 Création d'une template</h4>
+<p>A partir d'une VM nous pouvons crée une template en fessant clique droit <code>Convert to template</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_template/template1.png" alt="img"></p>
+<p>Pour déployer une VM depuis une template il faut faire clique droit dessus est choissir <code>Clone</code>, donner un nom a votre nouvelle VM et le mode de clonage par exemple Full Clone</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_template/template2.png" alt="img"></p>
+<p>Le tour est jouer vous avez crée votre VM</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/screen_template/template3.png" alt="img"></p>
+<h4 id="24-commande-qui-mon-%C3%A9tait-utiles">2.4 Commande qui mon était utiles</h4>
+<p>Cette partie regroupe les commande que j'ai du utiliser lors de cette SAE pour proxmox</p>
+<p>Pour supprimer un cluster :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">#A taper sur le noeud d'appartence du cluster</span>
+systemctl stop pve-cluster
+systemctl stop corosync
+pmxcfs -l
+rm /etc/pve/corosync.conf
+rm /etc/corosync/* -rf
+killall pmxcfs
+rm /var/lib/corosync/* -f
+
+systemctl start pve-cluster
+</div></code></pre>
+<p>Pour supprimer un noeud :</p>
+<pre class="hljs"><code><div>rm -r /etc/pve/[node_name]
+</div></code></pre>
+<p>Pour modifier l'IP du serveur proxmox :</p>
+<pre class="hljs"><code><div>vi /etc/network/interfaces
+systemctl restart networking.service
+</div></code></pre>
+<p></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></p>
+<h2 id="hyper-v-et-windows-server">Hyper-V et Windows Server</h2>
+<h3 id="initialisation-du-serveur">Initialisation du serveur</h3>
+<p>Pour commencer l'installation on a crée 4 disque virtuelle depuis le bios du serveur (3 disques de 500G vide et un dernier de 250G pour installer Windows Server) et activer la fonction SRIOV sur la carte réseau.</p>
+<p>Installation de windows via la iDRAC en utilisant un ISO du site azure education et la clé fournis avec. On a utilisé la version windows server Datacenter 2022. La différence entre la version datacenter et la versions standard de windows server est (Je ne cite que les difference lié à hyper-v):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Standard</th>
+<th style="text-align:left">Datacenter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">deux machines virtuelles plus un hôte Hyper-V par licence</td>
+<td style="text-align:left">nombre illimité de machines virtuelles, plus un hôte Hyper-V par licence</td>
+</tr>
+<tr>
+<td style="text-align:left">Pas de rôle serveur</td>
+<td style="text-align:left">Dispose des rôle serveur</td>
+</tr>
+<tr>
+<td style="text-align:left">Oui (conteneurs Windows en nombre illimité ; jusqu’à deux conteneurs Hyper-V)</td>
+<td style="text-align:left">Oui (conteneurs Windows et Hyper-V en nombre illimité)</td>
+</tr>
+<tr>
+<td style="text-align:left">Pas de support hyper-v Host-Guardian</td>
+<td style="text-align:left">Supporte le hyper-v Host-Guardian</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuration-de-windows">Configuration de Windows</h3>
+<p>Après installation je crée le compte administrateur et me connecte (Ont a utilisé le même NOM et MDP pour les deux serveurs pour facilité la chose, mais on aurai pu crée un autre utilisateur sur les deux serveurs pour plus de securité)
+J'arrive sur le bureau ou l'application <code>Gestionnaire de Serveur</code> s'affiche automatiquement à chaque démarrage.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/bureau1.png" alt=" "></p>
+<p>Cette application permet de gérer les rôles du serveur et de le supervisé. Pour pouvoir me connecter à distance sans passer par l'iDRAC et avoir une meilleur experience visuel, j'active le paramètre <code>Bureau à distance</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/bureaudistant.png" alt=" "></p>
+<p>Je fixe une adresse IP aux serveurs. Sous windows c'est dans Panneau de configuration -&gt; Centre de réseau et partage -&gt; Modifier les paramètres de la carte puis clique droit sur la carte et aller dans propriété. Sur Protocoles Internet versions 4 changer les propriétés et mettre la configuration de sont réseau.(IP, DNS, passerelle, etc...)</p>
+<p>Pour suivre, je m'y connecte grâce à <code>Remmina</code> sur linux, ou bureau distant sur windows.</p>
+<h3 id="installations-et-r%C3%A9glages-des-r%C3%B4les-et-fonctionnalit%C3%A9s">Installations et réglages des rôles et fonctionnalités</h3>
+<p>Maintenant j'installe les rôles obligatoire au fonctionnement des serveurs Hyper-v pour pouvoir faire une migration à chaud(La chose la plus complexe à faire, car elle demande beaucoup de fonctionnalité supplémentaire à installer/configurer).</p>
+<p>Pour ajouter des rôles il faut aller sur <code>Gérer</code> en haut à droite du <code>Gestionnaire de serveur</code>.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/ajoutrole.png" alt=" "></p>
+<p>Cliquer sur suivant dans l'onglets <code>avant de commencer</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/typeinstall.png" alt=" "></p>
+<p>Selectionner la première options, qui permet d'installer de nouveau rôles et fonctionnalité.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/selectionsserveur.png" alt=" "></p>
+<p>Selectionner le serveur sur lequel vous voulez ajouter des rôles.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/rolehyperv.png" alt=" "></p>
+<p>Le rôle hyper-v permet de crée un serveur qui gère la virtualisation et permet d'interconnecter plusieurs serveur hyper-v.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/fonctioncluster.png" alt=" "></p>
+<p>Dans les fonctionnalité on selectionne 'clustering de basculement` qui permet de crée des clusters de serveur Windows.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/confhyperv.png" alt=" "></p>
+<p>On arrive ensuite dans la configuration d'hyper-v.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/commuhyperv.png" alt=" "></p>
+<p>Configuration d'hyper-v, je selectionne la carte réseau sur laquelle hyper-v vas crée sont commutateurs virtuel.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/migrahyperv.png" alt=" "></p>
+<p>On peut activer et choisir le type de'authentification lors d'une migration. Etant donné que ce serveur vas être clusterisé on active aucune option ici.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/emplacementhyperv.png" alt=" "></p>
+<p>On peut selectionner l'emplacement de stockage des disques durs virtuels et des fichiers de configuration des ordinateurs virtuels.</p>
+<p>Après ça j'installe <code>Windows Admin Center</code> qui permet d'acceder par web au informations du serveur et de l'administrer.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/installwincenter.png" alt=" "></p>
+<p>Suivre les intruction et je conseille de désactiver les mises à jours microsoft update pour l'installation d'admin center afin d'éviter tout problème on pourra les effectuer après sans soucis.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/updatemicro.png" alt=" "></p>
+<p>Activer WinRM sur https uniquement afin d'éviter des failles de sécurité et bug de droits plus tard.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/centerwinrm.png" alt=" "></p>
+<p>Je décide de garder le port générique et de redirigé le trafic HTTP vers HTTPS pour éviter des conflits d'authentifications lors de la migration des VMs.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/centerhttp.png" alt=" "></p>
+<p>Pour ce connecter au site il faut utilisé de base le nom de l'ordinateur (ex : <code>https://WIN-XXXXXXXX</code>) et s'identifier avec un utilisateur de la machine local.
+Une fois connecter voila l'interface que l'ont obtient :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/tdbweb.png" alt=" "></p>
+<h3 id="mise-en-place-de-la-migration-dynamique">Mise en place de la migration dynamique</h3>
+<p>Pour pouvoir faire la migration dynamique il faut crée un domaine et y mettre les deux serveurs.</p>
+<p>Il faut ajouter le rôle service AD DS (active directory domain service). J'ai crée un domaine de manière rapide et sans pousser dans les détails.</p>
+<p>Activation du rôle.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/servicedom.png" alt=" "></p>
+<p>Poursuite de l'installation.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/serviceADDS.png" alt=" "></p>
+<p>Création du nom de domaine, cocher la case <code>Ajouter une foret</code>, pour crée un nouveau domaine. Lui choisir un nom de type <code>nom.local</code></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/creadom.png" alt=" "></p>
+<p>Choisir la version et un mdp pour le gestionnaire de domaine.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/active.png" alt=" "></p>
+<p>Ne rien toucher dans les options DNS, le message d'erreur est apapru car il detecte le DNS de l'iut.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/deleguation.png" alt=" "></p>
+<p>LE nom de domaine NetBios definis à partir de notre nom de domaine, il peut être changer.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/netbios.png" alt=" "></p>
+<p>Les différrent chemin d'accès je les laisse par défault.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/acces.png" alt=" "></p>
+<p>Finir l'installation et lancer le gestionnaire DNS pour finr la configuration.
+Une fenêtre récapitulative souvrira, cliquer sur suivant et terminer.
+Maintenant il faut mettre dans le deuxieme serveur uniquement l'ip du DNS de ce serveur de domaine et s'assurer qu'ils sont sur le même domaine.</p>
+<p>Dans le pare feu activer la regles iSCSI dans les deux sens (entrer et sortie) pour permettre ici la migration de stockage des VM entre serveurs.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/parefeu.png" alt=" "></p>
+<h3 id="connection-des-serveurs">Connection des serveurs</h3>
+<p>Création du cluster de serveur.
+Ajout des deux serveurs au cluster à l'aide du <code>Gestionnaire de cluster</code> afin qu'ils soit connecter ensemble. Pour permettre une meilleur fonctionnement des applications.</p>
+<p>Selection des serveurs qui vont êtres ajouter au cluster.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus1.png" alt=" "></p>
+<p>Je décide de ne pas executer le test car je vais le faire après l'installation.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus2.png" alt=" "></p>
+<p>Selection du nom du cluster.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus3.png" alt=" "></p>
+<p>Confirmation des décisions.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus4.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus5.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/instaclus6.png" alt=" "></p>
+<p>Voilà le cluster est crée et opérationnel mais toute les fonctionnalaité apporté par le cluster ne sont pas active.</p>
+<p>Maintenant relié les deux serveur hyper-v entre eux.</p>
+<p>Pour ce faire lancer le Gestionnaire Hyper-v. Ensuite dans la liste à guauche cliquer droit sur gestionnaire Hyper-v et selectionner <code>Se connecter au serveur</code>, mettre dans autre ordinateur le nom du serveur que l'ont souhaite ajouter (ex:<code>WIN-XXXXXXXX</code>).</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/hyperv2.png" alt=" "></p>
+<p>Voilà à quoi devrai ressembler les deux serveurs connecter.
+Activer la migration dynamique sur les deux serveur :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/activemig.png" alt=" "></p>
+<p>Je crée une VM pour essayer la migration dynamique. J'utilise une Alpine.</p>
+<p>Création VM rapide :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vm1.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vm2.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vm3.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vm4.png" alt=" "></p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vm5.png" alt=" "></p>
+<p>Après ça je la démarre et commence la migration à chaud DE PLUS le lecteur virtuel ISO est toujours attaché ce qui n'est pas possible avec la concurrence :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md1.png" alt=" "></p>
+<p>Cliquer droit sur la VM -&gt; Déplacer</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md2.png" alt=" "></p>
+<p>Passer la première fenêtre</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md3.png" alt=" "></p>
+<p>Selectionner déplacer l'ordinateur virtuel pour pouvoir déplacer l'integralité de la VM.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md4.png" alt=" "></p>
+<p>Je selectionne le serveur vers lequel migrer ma VM.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md5.png" alt=" "></p>
+<p>Je choisis de tout migrer.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md6.png" alt=" "></p>
+<p>Dossier de destination de la VM sur l'autre serveur.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md7.png" alt=" "></p>
+<p>Commencement de la migration.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md8.png" alt=" "></p>
+<p>Dans le statut de la VM ont peu voir l'avancement du transfert.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md9.png" alt=" ">
+<img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md10.png" alt=" "></p>
+<p>Arriver de la VM sur le serveur de destination sans problèmes.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/md11.png" alt=" "></p>
+<p>Comme vu la VM a migrer à chaud du serveur WIN-07... vers le WIN-5U... Et ce sans coupure durant le transfert. Mais il y à juste eu une 'actualisation' de la fenêtre de la VM mais je ne pense pas que ce genre de chose soit visible sur un ssh ou bureau distant.</p>
+<p>La migration à froid fonctionne aussi et dans la même configuration des choses.</p>
+<p>Voici toute les technique tenter qui n'ont pas aboutis a un résultat positif :</p>
+<p>1: Création d'un disque virtuel iSCSI pour les VM :</p>
+<p>J'ai voulut crée un disque iSCSI pour pouvoir mettre le stockage des vm sur un disque partagé virtuel, mais j'ai eu différent problèmes que j'ai eu du mal à règler.</p>
+<p>2: Création d'une pool de stockage dédier :</p>
+<p>J'ai essayer de crée une pool de stockage spécial pour les VM mais malheuresement les disque virtuel crée dans le bios de 500Go n'ont pas été reconnu par le cluster donc impossible d'aller plus loins.</p>
+<p>3: Création d'un cluster complet pour faciliter la gestion d'Hyper-V:</p>
+<p>Comme dit précedement la partie stockage du cluster à été trés difficile voir impossible à faire, de plus les serveur étant sur un réseau non-professionel le cluster n'acceptait pas la configuration. Il etait possible de faire un test complet ou précis de sont cluster en voila une image du rapport de sortie avec des erreurs :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/erreurclus.png" alt=" "></p>
+<h2 id="vpn-wireguard-vpn-pour-administration-a-distance">VPN Wireguard VPN pour administration a distance</h2>
+<p>Ici la salle est sur le resau 10.202.0.0/16 et le VPN sur le 172.20.0.0/16.
+Le resau de l'iut et nater et il est imposible de faire du port-forwarding, il est donc imposible de metre directement notre serveur VPN sur le resau de l'iut.
+Pour regler ce probleme nous allont metre le serveur VPN sur un VPS et le serveur ProxMox de l'iut sera un client qui auras un keepalive qui conserveras le tunelle vpn. Grace a cette architecture et la mise en place de routage et de regle de NAT des packet ont peut acceder a la salle cloud depuis le serveur proxmox avec sont IP.</p>
+<p>Voici un schéma de notre installation.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/vpn.svg" alt="img"></p>
+<h3 id="configuration-du-serveur-vps-par-commande">Configuration du serveur VPS par commande</h3>
+<p>Voici comment on peut configurer wireguard en ligne de commande. Ici ce sont les commande de configuration du serveur VPS.</p>
+<pre class="hljs"><code><div>wg genkey &gt; priv 
+</div></code></pre>
+<p>Ici on génère la clé privée de notre client (dans ce cas celle du serveur).</p>
+<pre class="hljs"><code><div>sudo ip link add wg0 <span class="hljs-built_in">type</span> wireguard 
+</div></code></pre>
+<p>Ici on crée notre nouvelle interface de réseau de type wireguard.</p>
+<pre class="hljs"><code><div>sudo ip a add 172.20.20.1/16 dev wg0 
+</div></code></pre>
+<p>Ici, on lui donne l'adresse IP que l'on souhaite. Dans ce cas, on utilise une adresse IP privée dans un réseau en 172.20.0.0/16 pour éviter tout conflit avec la salle cloud ou avec les réseaux locaux des clients.</p>
+<pre class="hljs"><code><div>wg <span class="hljs-built_in">set</span> wg0 private-key ./privatekey 
+</div></code></pre>
+<p>Ici on attribue la clé que l'on a générée précédemment.</p>
+<pre class="hljs"><code><div>sudo ip link <span class="hljs-built_in">set</span> wg0 up 
+</div></code></pre>
+<p>Ici, on active l'interface que nous avons créée.</p>
+<pre class="hljs"><code><div>sudo wg <span class="hljs-built_in">set</span> wg0 peer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx allowed-ips 172.20.20.2/32 
+</div></code></pre>
+<p>Après avoir suivi la procédure précédente pour les clients, on peut les ajouter en utilisant cette commande. Nous spécifions leur clé publique et leur adresse IP à laquelle nous autorisons l'accès. Ici, nous autorisons une adresse IP en /32 pour garantir qu'uniquement cette adresse IP puisse se connecter.</p>
+<pre class="hljs"><code><div>sudo wg <span class="hljs-built_in">set</span> wg0 peer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx allowed-ips 172.20.20.3/32,10.202.0.0/16 
+</div></code></pre>
+<p>De même ici, mais en ajoutant les adresses IP de la salle afin de pouvoir communiquer avec.</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward 
+
+</div></code></pre>
+<p>Ici, on active le routage de paquets pour que les pairs puissent envoyer des paquets au réseau 10.202.0.0/16.</p>
+<pre class="hljs"><code><div>ip route add 10.202.0.0/16 via 172.20.20.3 
+</div></code></pre>
+<p>On ajoute donc la route pour le résau.</p>
+<h4 id="c%C3%B4t%C3%A9-client">Côté client</h4>
+<p>Du coté client on doit reprendre aproximativement les configurations du VPS sauf que l'on doit set le vps en tant que peer.</p>
+<pre class="hljs"><code><div>sudo wg <span class="hljs-built_in">set</span> wg0 peer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx allowed-ips 172.20.0.0/16,10.202.0.0/16 endpoint XX.XX.XX.XX:XX <span class="hljs-comment">#Ici, on met toujours la clé publique et les IP autorisées, mais on rajoute également l'IP publique du serveur VPN.</span>
+</div></code></pre>
+<h3 id="sauvegarder-les-configurations-que-lon-a-fait">Sauvegarder les configurations que l'on a fait</h3>
+<p>Les configuration que l'on a fait en commande sont volatile, il faut donc les sauvegardes dans un fichier de configuraion pour les conserver.</p>
+<pre class="hljs"><code><div>wg showconf wg0 &gt; /etc/wireguard/wg0.conf 
+</div></code></pre>
+<p>Ici, on affiche les configurations puis on les redirige vers un fichier de configuration.</p>
+<pre class="hljs"><code><div>systemctl <span class="hljs-built_in">enable</span> --now wg-quick@wg0 
+</div></code></pre>
+<p>Ici, pour le VPS et le serveur de l'IUT, on active l'option qui permet à l'interface de se réactiver automatiquement lors du redémarrage.</p>
+<h3 id="configuration-du-vps">Configuration du VPS</h3>
+<p>Voici le fichier de configuration du VPS. Que l'on quelque peut modifier afin que l'on ait plus a taper de comande apres l'activation de l'interface. De plus avec les fichier de donfiguration, lors de l'activation de l'interface les routes sont ajouter automatiquement.</p>
+<pre class="hljs"><code><div>[Interface]
+ListenPort = 52403 <span class="hljs-comment">#Ici, on fixe le port pour qu'il ne change pas à chaque redémarrage.</span>
+Address = 172.20.20.1/16 <span class="hljs-comment">#Adresse du VPS dans notre VPN</span>
+PrivateKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <span class="hljs-comment">#Clé privée générée plutôt.</span>
+PostUp=<span class="hljs-built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward <span class="hljs-comment">#Activation au démarrage du routage des paquets</span>
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <span class="hljs-comment">#Clé publique du peer</span>
+AllowedIPs = 172.20.20.2/32 <span class="hljs-comment">#IP autorisée</span>
+Endpoint = 193.57.121.159:65526 <span class="hljs-comment">#IP de l'endpoint (Généré automatiquement, si le peer se connecte depuis une autre IP, cela ne pose pas de problème)</span>
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AllowedIPs = 172.20.20.3/32, 10.202.0.0/16
+Endpoint = 194.199.227.10:35924
+</div></code></pre>
+<h3 id="configuration-du-serveur-iut">Configuration du serveur IUT</h3>
+<p>Voici le fichier de configuration du serveur Proxmox coté iut. (Client VPS)</p>
+<pre class="hljs"><code><div>[Interface]
+ListenPort = 35924
+PrivateKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Address = 172.20.20.3/16
+PostUp=<span class="hljs-built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward &amp;&amp; iptables -t nat -A POSTROUTING -s 172.20.0.0/16 -o vmbr0 -j MASQUERADE <span class="hljs-comment">#Ici, on autorise le routage de paquets et on ajoute une règle iptables pour NATer les paquets sur le réseau.</span>
+PostDown=iptables -t nat -D POSTROUTING -s 172.20.0.0/16 -o vmbr0 -j MASQUERADE <span class="hljs-comment">#Ici on désactive le NAT.</span>
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AllowedIPs = 172.20.0.0/16
+Endpoint = XX.XX.XX.XX:XX <span class="hljs-comment">#ip:port</span>
+PersistentKeepalive = 25 <span class="hljs-comment">#Ici on met un keepalive de 25 secondes qui permet de maintenir le tunnel VPN en fonctionnement.</span>
+</div></code></pre>
+<h3 id="configuration-du-poste-client">Configuration du poste Client</h3>
+<p>Voici le fichier de configuration du poste client.</p>
+<pre class="hljs"><code><div>[Interface]
+ListenPort = 58432
+PrivateKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Address = 172.20.20.2/16
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+AllowedIPs = 172.20.0.0/16, 10.202.0.0/16
+Endpoint = XX.XX.XX.XX:XX <span class="hljs-comment">#ip:port</span>
+</div></code></pre>
+<h3 id="activation">Activation</h3>
+<p>Pour activer l'interface au demarage :</p>
+<pre class="hljs"><code><div>sudo systemctl <span class="hljs-built_in">enable</span> --now wg-quick@wg0
+</div></code></pre>
+<p>Pour l'activer ponctuellement :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-11 22-07-30.png" alt="img"></p>
+<h3 id="setup-ip-et-ping">Setup IP et ping</h3>
+<p>Ici mon interface resau wlp1s0 est connecter a un partage de connection en 4G. Avec l'interface wg0 d'activer et de connerter je peux bien ping le resaux de l'IUT.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-09 18-29-05.png" alt="img"></p>
+<h3 id="traceroute">TraceRoute</h3>
+<p>Depuis cette foi-ci le resau fibre de mon appartement je realise un trace route, je passe bien par mon VPS puis le serveur de l'IUT pour ensuite arriver sur la salle.</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-11 22-07-20.png" alt="img"></p>
+<h3 id="desactivation">Desactivation</h3>
+<p>Pour desactiver l'interface :</p>
+<p><img src="file:///home/mathieu/Bureau/SAECloud/CR-GNERAL/img/Capture d’écran du 2022-12-11 22-07-41.png" alt="img"></p>
+<h2 id="comparatif-et-conclusion">Comparatif et conclusion</h2>
+<blockquote>
+<p>Dans cette partie on vas raliser un comparatif des trois solution de virtualisation avec plusieur critaire, et nous rendront notre avis sur quel systeme nous semble le plus adequoit en remplacement de VMWare.</p>
+</blockquote>
+<h3 id="performances">Performances</h3>
+<blockquote>
+<p>Il est important de comparer les performances des deux systèmes en termes de temps d'exécution des tâches et de consommation des ressources (mémoire, processeur, etc.).</p>
+</blockquote>
+<p>En terme de perfomance pure les diferent systeme ont des performance asser similiaire, que ce soir sur de la virtualisation de machine linux ou windows les diferences de performance entre les diferent systemes sont asser negligable en tent que critaire de selection. Même si aprês plusieur comparaisont et sur de plus grande echelle on peut constater de meilleur performance pour windows serveur.</p>
+<h3 id="flexibilit%C3%A9-et-facilit%C3%A9-dutilisation">Flexibilité et facilité d'utilisation</h3>
+<blockquote>
+<p>Il est important de comparer la facilité d'utilisation des deux systèmes, notamment en ce qui concerne la création et la gestion des machines virtuelles. La compatibilité avec différents systèmes d'exploitation et applications est également un aspect à prendre en compte</p>
+</blockquote>
+<h3 id="co%C3%BBts">Coûts</h3>
+<blockquote>
+<p>Il est important de comparer les coûts associés à chaque système de virtualisation, notamment en termes de licences et de support technique</p>
+</blockquote>
+<p>En ce qui concerne les coûts, les deux systèmes sont assez différents : Proxmox est gratuit en théorie mais en production, il est absolument nécessaire d'avoir un support qui est donc payant.</p>
+<p>En ce qui concerne Windows Server, il fonctionne sous forme de licence (5 ans de durée de vie) et nécessite plusieurs licences différentes : une pour le serveur maître et d'autres pour les serveurs esclaves. Les licences en question ont une durée de vie de 5 ans.</p>
+<p>Comparer les prix est assez difficile vu les différences de fonctionnement de chaque système, mais pour résumer, Windows Server sera plus rentable sur une infrastructure plus grande.</p>
+<p>Par exemple, si on prend 11 serveurs (1 maître, 10 esclaves) sur 5 ans, on aura :</p>
+<p>Pour Windows, ce sera une licence Datacenter à 6200 $ et dix licences Standard à 1070 $, ce qui reviendra à environ 17 000 $ pour les 5 ans complets.</p>
+<p>Tandis que pour Proxmox, l'assistance coûte environ 950 $ (890 €) par an par CPU, donc dans ce cas, sur 5 ans, cela reviendra à environ 52 250 $.</p>
+<p>En contrepartie, si on utilise une infrastructure plus petite, il sera plus rentable d'utiliser Proxmox.</p>
+<h3 id="la-s%C3%A9curit%C3%A9">La sécurité</h3>
+<blockquote>
+<p>Il est important de comparer les niveaux de sécurité des deux systèmes, notamment en termes de protection des données et de contrôle d'accès aux machines virtuelles</p>
+</blockquote>
+<p>Windows Server dispose de fonctionnalités de sécurité intégrées, telles que le pare-feu Windows, le contrôle des comptes d'utilisateur et BitLocker, qui peuvent aider à protéger contre les logiciels malveillants et l'accès non autorisé.</p>
+<p>Proxmox, d'autre part, offre un niveau élevé de sécurité grâce à son noyau Linux et son environnement Debian, qui permettent l'utilisation de nombreux outils de sécurisation.</p>
+<p>La sécurité des serveurs dépendra vraiment de la configuration effectuée sur ces derniers.</p>
+<h3 id="la-compatibilit%C3%A9-mat%C3%A9rielle">La compatibilité matérielle</h3>
+<blockquote>
+<p>Il est important de vérifier que les deux systèmes de virtualisation sont compatibles avec les différents composants matériels de votre ordinateur (carte graphique, disques durs, etc.)</p>
+</blockquote>
+<h3 id="les-fonctionnalit%C3%A9s">Les fonctionnalités</h3>
+<blockquote>
+<p>Il est utile de comparer les fonctionnalités avancées proposées par les deux systèmes, telles que la prise en charge de plusieurs systèmes d'exploitation en simultané, la gestion de la mémoire et du processeur en temps réel, etc</p>
+</blockquote>
+<p>En termes de fonctionnalités, Windows Server réussit à se démarquer grâce à sa polyvalence. Il permet l'accès à de nombreuses fonctionnalités utiles pour les entreprises, comme les annuaires. En ce qui concerne la virtualisation, Windows profite de ses fonctionnalités propriétaires tandis que Proxmox utilise des fonctionnalités open source comme CEPH, ce qui permet d'avoir accès à un large éventail de fonctionnalités.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>En conclusion, malgré quelques différences de performances et de coûts, le principal argument pour choisir entre les deux systèmes de virtualisation sera la connaissance du milieu. Si le but est de remplacer VMWare, on retrouvera plus facilement ses marques sur Proxmox, mais si l'on est un grand utilisateur de Windows, il sera plus intéressant de passer par Windows Server Hyper-V.</p>
+
+</body>
+</html>
