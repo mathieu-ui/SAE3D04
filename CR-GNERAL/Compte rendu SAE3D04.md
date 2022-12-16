@@ -863,19 +863,13 @@ Pour desactiver l'interface :
 
 ### Performances
 
-> Il est important de comparer les performances des deux systèmes en termes de temps d'exécution des tâches et de consommation des ressources (mémoire, processeur, etc.).
-
 En terme de perfomance pure les diferent systeme ont des performance asser similiaire, que ce soir sur de la virtualisation de machine linux ou windows les diferences de performance entre les diferent systemes sont asser negligable en tent que critaire de selection. Même si aprês plusieur comparaisont et sur de plus grande echelle on peut constater de meilleur performance pour windows serveur.
 
 ### Flexibilité et facilité d'utilisation
 
-> Il est important de comparer la facilité d'utilisation des deux systèmes, notamment en ce qui concerne la création et la gestion des machines virtuelles. La compatibilité avec différents systèmes d'exploitation et applications est également un aspect à prendre en compte
-
 Pour la flexibilité et facilité d'utilisation, les trois solutions diffères, commençons avec windows qui lui est trés compliqué à configurer, l'installation est simple mais pour la mise en places des rôles et fonctionnalités, il vas falloir beaucoup de connaissance sur les environnnment windows et de temps. Proxmox et vmware sont eux beaucoup plus simple à mettre en place notament grâce à une communauté bien plus grande que windows. Une fois ces étapes faite le menu utilisateur et administrateur sont plutot ressemblant entre proxmox et vmware. Windows lui reste plus complexe si on utilise pas `Admin Center`.
 
 ### Coûts
-
-> Il est important de comparer les coûts associés à chaque système de virtualisation, notamment en termes de licences et de support technique
 
 En ce qui concerne les coûts, les deux systèmes sont assez différents : Proxmox est gratuit en théorie mais en production, il est absolument nécessaire d'avoir un support qui est donc payant.
 
@@ -893,8 +887,6 @@ En contrepartie, si on utilise une infrastructure plus petite, il sera plus rent
 
 ### La sécurité
 
-> Il est important de comparer les niveaux de sécurité des deux systèmes, notamment en termes de protection des données et de contrôle d'accès aux machines virtuelles
-
 Windows Server dispose de fonctionnalités de sécurité intégrées, telles que le pare-feu Windows, le contrôle des comptes d'utilisateur et BitLocker, qui peuvent aider à protéger contre les logiciels malveillants et l'accès non autorisé.
 
 Proxmox, d'autre part, offre un niveau élevé de sécurité grâce à son noyau Linux et son environnement Debian, qui permettent l'utilisation de nombreux outils de sécurisation.
@@ -903,18 +895,16 @@ La sécurité des serveurs dépendra vraiment de la configuration effectuée sur
 
 ### La compatibilité matérielle
 
-> Il est important de vérifier que les deux systèmes de virtualisation sont compatibles avec les différents composants matériels de votre ordinateur (carte graphique, disques durs, etc.)
-
 La compatibilité materielle de proxmox(Linux), Hyper-V(Windows) et WmWare('Linux') sont quasiment identique, il sont trés flexible sur le matérielle utilisé. Les seul limitations sont pour les cluster de windows par exemple, les serveurs doivent se ressembler, voir avoir la même architecture sinon des incompatibilé peuvent avoit lieu. Par exemple lors d'une migration dynamique d'une VM. Sinon les trois solutions sont compatible avec quasiment tout, même un vieux pc portable duo core et 2G de ram installé dans sont salon.
 
 ### Les fonctionnalités
 
-> Il est utile de comparer les fonctionnalités avancées proposées par les deux systèmes, telles que la prise en charge de plusieurs systèmes d'exploitation en simultané, la gestion de la mémoire et du processeur en temps réel, etc
-
 En termes de fonctionnalités, Windows Server réussit à se démarquer grâce à sa polyvalence. Il permet l'accès à de nombreuses fonctionnalités utiles pour les entreprises, comme les annuaires. En ce qui concerne la virtualisation, Windows profite de ses fonctionnalités propriétaires tandis que Proxmox utilise des fonctionnalités open source comme CEPH, ce qui permet d'avoir accès à un large éventail de fonctionnalités.
+
+</br></br></br></br>
 
 --------
 
 ## Conclusion
 
-En conclusion, malgré quelques différences de performances et de coûts, le principal argument pour choisir entre les deux systèmes de virtualisation sera la connaissance du milieu. Si le but est de remplacer VMWare, on retrouvera plus facilement ses marques sur Proxmox, mais si l'on est un grand utilisateur de Windows, il sera plus intéressant de passer par Windows Server Hyper-V. Pour nous on se pancheras plus vers Proxmox.
+En conclusion, bien que Windows Server Hyper-V présente certaines différences de performances, de coûts, de performance et de polyvalence par rapport à Proxmox, le choix entre ces deux systèmes de virtualisation dépend principalement de votre connaissance de l'environnement. Si vous souhaitez remplacer VMWare, Proxmox pourrait être plus facile à maîtriser, étant basé sur Linux, un système d'exploitation que vous connaissez particulièrement bien. Cependant, si vous êtes un grand utilisateur de Windows, il pourrait être plus intéressant de passer par Windows Server Hyper-V. Dans notre cas, nous pencherons plutôt vers Proxmox étant donné que nous sommes familiarisés avec Linux.
