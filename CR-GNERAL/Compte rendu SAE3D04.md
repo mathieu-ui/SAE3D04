@@ -264,6 +264,7 @@ Pour cela il suffit de cliquer sur `CEPH` :
 ![img](./img/Screen_ceph/Capture%20du%202022-12-13%2016-55-33.png)
 
 </br></br></br>
+
 ### 2.Utilisation
 
 #### 2.1 Création d'une VM
@@ -414,7 +415,11 @@ vi /etc/network/interfaces
 systemctl restart networking.service
 ```
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br></br></br></br></br></br>
+
+</br></br></br></br></br></br></br>
+
+</br></br></br></br></br></br>
 
 ## Hyper-V et Windows Server
 
@@ -551,6 +556,8 @@ Dans le pare feu activer la regles iSCSI dans les deux sens (entrer et sortie) p
 
 ![ ](./img/parefeu.png)
 
+</br></br></br>
+
 ### Connection des serveurs
 
 Création du cluster de serveur.
@@ -663,6 +670,8 @@ J'ai essayer de crée une pool de stockage spécial pour les VM mais malheuresem
 Comme dit précedement la partie stockage du cluster à été trés difficile voir impossible à faire, de plus les serveur étant sur un réseau non-professionel le cluster n'acceptait pas la configuration. Il etait possible de faire un test complet ou précis de sont cluster en voila une image du rapport de sortie avec des erreurs :
 
 ![ ](./img/erreurclus.png)
+
+</br></br></br>
 
 ## VPN Wireguard VPN pour administration a distance
 
@@ -779,6 +788,8 @@ AllowedIPs = 172.20.20.3/32, 10.202.0.0/16
 Endpoint = 194.199.227.10:35924
 ```
 
+</br></br></br>
+
 ### Configuration du serveur IUT
 
 Voici le fichier de configuration du serveur Proxmox coté iut. (Client VPS)
@@ -813,6 +824,8 @@ PublicKey = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 AllowedIPs = 172.20.0.0/16, 10.202.0.0/16
 Endpoint = XX.XX.XX.XX:XX #ip:port
 ```
+
+</br></br></br>
 
 ### Activation
 
@@ -858,6 +871,8 @@ En terme de perfomance pure les diferent systeme ont des performance asser simil
 
 > Il est important de comparer la facilité d'utilisation des deux systèmes, notamment en ce qui concerne la création et la gestion des machines virtuelles. La compatibilité avec différents systèmes d'exploitation et applications est également un aspect à prendre en compte
 
+Pour la flexibilité et facilité d'utilisation, les trois solutions diffères, commençons avec windows qui lui est trés compliqué à configurer, l'installation est simple mais pour la mise en places des rôles et fonctionnalités, il vas falloir beaucoup de connaissance sur les environnnment windows et de temps. Proxmox et vmware sont eux beaucoup plus simple à mettre en place notament grâce à une communauté bien plus grande que windows. Une fois ces étapes faite le menu utilisateur et administrateur sont plutot ressemblant entre proxmox et vmware. Windows lui reste plus complexe si on utilise pas `Admin Center`.
+
 ### Coûts
 
 > Il est important de comparer les coûts associés à chaque système de virtualisation, notamment en termes de licences et de support technique
@@ -890,6 +905,8 @@ La sécurité des serveurs dépendra vraiment de la configuration effectuée sur
 
 > Il est important de vérifier que les deux systèmes de virtualisation sont compatibles avec les différents composants matériels de votre ordinateur (carte graphique, disques durs, etc.)
 
+La compatibilité materielle de proxmox(Linux), Hyper-V(Windows) et WmWare('Linux') sont quasiment identique, il sont trés flexible sur le matérielle utilisé. Les seul limitations sont pour les cluster de windows par exemple, les serveurs doivent se ressembler, voir avoir la même architecture sinon des incompatibilé peuvent avoit lieu. Par exemple lors d'une migration dynamique d'une VM. Sinon les trois solutions sont compatible avec quasiment tout, même un vieux pc portable duo core et 2G de ram installé dans sont salon.
+
 ### Les fonctionnalités
 
 > Il est utile de comparer les fonctionnalités avancées proposées par les deux systèmes, telles que la prise en charge de plusieurs systèmes d'exploitation en simultané, la gestion de la mémoire et du processeur en temps réel, etc
@@ -900,4 +917,4 @@ En termes de fonctionnalités, Windows Server réussit à se démarquer grâce �
 
 ## Conclusion
 
-En conclusion, malgré quelques différences de performances et de coûts, le principal argument pour choisir entre les deux systèmes de virtualisation sera la connaissance du milieu. Si le but est de remplacer VMWare, on retrouvera plus facilement ses marques sur Proxmox, mais si l'on est un grand utilisateur de Windows, il sera plus intéressant de passer par Windows Server Hyper-V.
+En conclusion, malgré quelques différences de performances et de coûts, le principal argument pour choisir entre les deux systèmes de virtualisation sera la connaissance du milieu. Si le but est de remplacer VMWare, on retrouvera plus facilement ses marques sur Proxmox, mais si l'on est un grand utilisateur de Windows, il sera plus intéressant de passer par Windows Server Hyper-V. Pour nous on se pancheras plus vers Proxmox.
