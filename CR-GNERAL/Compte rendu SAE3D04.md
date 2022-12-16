@@ -124,13 +124,13 @@ Chemin : `Device Settings -> Votre carte 10G -> Device Level Configuration -> Vi
 
 > On peut observer qu'ils ont bien était activées.
 
-![img](./img/screen_prerequis\3.png)
+![img](./img/screen_prerequis/3.png)
 
 Suppression des cartes réseaux :
 Chemin : `Device Settings -> Intgrated RAID Controller
 -> Virtual Disk Management`
 
-![image]( "img\screen_prerequis\2.png")
+![image](./img/screen_prerequis/2.png)
 
 #### 1.1 Promox
 
